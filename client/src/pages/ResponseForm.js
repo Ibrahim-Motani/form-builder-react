@@ -27,7 +27,7 @@ function ResponseForm() {
   useEffect(() => {
     axios
       .get(
-        `https://dynamic-form-builder-react.herokuapp.com/get-form/${params.form_id}`
+        `https://react-dynamic-form-builder.herokuapp.com/get-form/${params.form_id}`
       )
       .then(response => {
         const result = response.data;
@@ -94,7 +94,7 @@ function ResponseForm() {
 
       axios
         .post(
-          `https://dynamic-form-builder-react.herokuapp.com/add-response`,
+          `https://react-dynamic-form-builder.herokuapp.com/add-response`,
           data
         )
         .then(response => {

@@ -25,24 +25,30 @@ function CreatedForms() {
   };
 
   const handleDeleteForm = _id => {
-    axios.delete(
-      `https://dynamic-form-builder-react.herokuapp.com/delete-form/${_id}`
-    ).then(response => {
-      console.log(response.data);
-      setTemp(!temp);
-    }).catch(error => {
-      console.log(error);
-      setTemp(!temp);
-    });
-    axios.delete(
-      `https://dynamic-form-builder-react.herokuapp.com/delete-responses/${_id}`
-    ).then(response => {
-      console.log(response.data);
-      setTemp(!temp);
-    }).catch(error => {
-      console.log(error);
-      setTemp(!temp);
-    });
+    axios
+      .delete(
+        `https://react-dynamic-form-builder.herokuapp.com/delete-form/${_id}`
+      )
+      .then(response => {
+        console.log(response.data);
+        setTemp(!temp);
+      })
+      .catch(error => {
+        console.log(error);
+        setTemp(!temp);
+      });
+    axios
+      .delete(
+        `https://react-dynamic-form-builder.herokuapp.com/delete-responses/${_id}`
+      )
+      .then(response => {
+        console.log(response.data);
+        setTemp(!temp);
+      })
+      .catch(error => {
+        console.log(error);
+        setTemp(!temp);
+      });
   };
 
   return (

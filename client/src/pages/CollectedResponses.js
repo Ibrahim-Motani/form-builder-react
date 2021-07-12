@@ -16,7 +16,7 @@ function CollectedResponses() {
   useEffect(() => {
     axios
       .get(
-        `https://dynamic-form-builder-react.herokuapp.com/get-all-responses-for-a-particular-form/${params.id}`
+        `https://react-dynamic-form-builder.herokuapp.com/get-all-responses-for-a-particular-form/${params.id}`
       )
       .then(response => {
         const result = response.data;
@@ -30,7 +30,7 @@ function CollectedResponses() {
 
   const handleDeleteResponse = _id => {
     axios
-      .delete(`https://dynamic-form-builder-react.herokuapp.com/delete-response/${_id}`)
+      .delete(`https://react-dynamic-form-builder.herokuapp.com/delete-response/${_id}`)
       .then(response => {
         console.log(response.data);
         setTemp(!temp);

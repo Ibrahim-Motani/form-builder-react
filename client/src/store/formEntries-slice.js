@@ -344,7 +344,7 @@ export const registerUser = credentials => async dispatch => {
     // if user is successfully registered there then he is added to the local database
     try {
       const result = await axios.post(
-        "https://dynamic-form-builder-react.herokuapp.com/add-user",
+        "https://react-dynamic-form-builder.herokuapp.com/add-user",
         {
           name: credentials.name,
           email: credentials.email,
@@ -384,7 +384,7 @@ export const loginUser = credentials => async dispatch => {
     const email = result.data.email;
     try {
       const result = await axios.get(
-        `https://dynamic-form-builder-react.herokuapp.com/get-user/${email}`
+        `https://react-dynamic-form-builder.herokuapp.com/get-user/${email}`
       );
       dispatch(formEntriesActions.setUserId(result.data));
     } catch (error) {
@@ -411,7 +411,7 @@ export const addFormToTheDatabase = (formEntries, userId) => async dispatch => {
 
   try {
     const result = await axios.post(
-      "https://dynamic-form-builder-react.herokuapp.com/add-form",
+      "https://react-dynamic-form-builder.herokuapp.com/add-form",
       data,
       headers
     );
@@ -425,7 +425,7 @@ export const addFormToTheDatabase = (formEntries, userId) => async dispatch => {
 export const getAllFormsForCurrentUser = userId => async dispatch => {
   try {
     const result = await axios.get(
-      `https://dynamic-form-builder-react.herokuapp.com/all-forms-for-user/${userId}`
+      `https://react-dynamic-form-builder.herokuapp.com/all-forms-for-user/${userId}`
     );
     return dispatch(formEntriesActions.getAllFormsForCurrentUser(result.data));
   } catch (error) {

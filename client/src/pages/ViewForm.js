@@ -20,7 +20,7 @@ function ViewForm() {
   useEffect(() => {
     axios
       .get(
-        `https://dynamic-form-builder-react.herokuapp.com/get-form/${params.form_id}`
+        `https://react-dynamic-form-builder.herokuapp.com/get-form/${params.form_id}`
       )
       .then(result => {
         console.log(result.data);
